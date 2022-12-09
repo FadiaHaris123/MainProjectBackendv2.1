@@ -7,8 +7,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.util.Optional;
+
 @RepositoryRestResource(collectionResourceRel = "chitty",path = "chitty")
 public interface ChitRepository extends JpaRepository<Chitty,Long> {
+    @Override
+    Optional<Chitty> findById(Long aLong);
+
     Page<Chitty> findBychitNumber(@Param("chitno") Long chitNumber, Pageable pageable);
-//    Page<Chitty> findByNameContaining(@Param("name") String name, Pageable pageable);
+
 }

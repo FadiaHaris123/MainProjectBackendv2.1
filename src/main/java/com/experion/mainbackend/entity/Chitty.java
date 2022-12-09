@@ -2,11 +2,9 @@ package com.experion.mainbackend.entity;
 
 import lombok.Data;
 import net.minidev.json.annotate.JsonIgnore;
-import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
 
 @Entity
 @Table(name = "chitty")

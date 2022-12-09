@@ -13,9 +13,9 @@ public class ChittyPost {
     private Long chitNumber;
     private Long installment;
     private Long duration;
-    private Manager manager;
+    private Long manager;
     private Integer numberOfChittal;
-    private ChittyCategory category;
+    private Long category;
     private Long totalAmount;
     private Date launchDate;
     private Date startDate;

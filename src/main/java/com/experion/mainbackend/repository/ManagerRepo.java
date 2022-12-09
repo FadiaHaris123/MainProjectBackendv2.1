@@ -10,10 +10,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Optional;
+
 @CrossOrigin(origins="*")
 @RepositoryRestResource(collectionResourceRel = "manager",path = "managers")
 @Controller
 @ResponseBody
 public interface ManagerRepo extends JpaRepository<Manager,Long> {
+    @Override
+    Optional<Manager> findById(Long aLong);
+
     Page<Manager> findByfirstNameContaining(@Param("name") String firstName, Pageable pageable);
 }
