@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -11,6 +12,7 @@ import javax.persistence.Table;
 @Table(name = "userlogin")
 public class UserLogin {
 
+    @Id
     @Column(name = "id")
     private Long userId;
 
