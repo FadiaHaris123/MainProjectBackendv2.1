@@ -30,6 +30,9 @@ public class Chitty {
     @Column(name = "number_of_chittals")
     private int numberOfChittal;
 
+    @Column(name = "current_number_of_chittals")
+    private int currentNumberOfChittal;
+
     @Column(name = "total_amount")
     private Long totalAmount;
 
@@ -44,16 +47,21 @@ public class Chitty {
     @Column(name="start_date")
     private Date startDate;
 
-    public Chitty(Long chitNumber, Long installment, Long duration, ChittyCategory category, int numberOfChittal, Long totalAmount, Manager manager, Date launchDate, Date startDate) {
+    @Column(name = "status")
+    private String status;
+
+    public Chitty(Long chitNumber, Long installment, Long duration, ChittyCategory category, int numberOfChittal, int currentNumberOfChittal, Long totalAmount, Manager manager, Date launchDate, Date startDate, String status) {
         this.chitNumber = chitNumber;
         this.installment = installment;
         this.duration = duration;
         this.category = category;
         this.numberOfChittal = numberOfChittal;
+        this.currentNumberOfChittal = currentNumberOfChittal;
         this.totalAmount = totalAmount;
         this.manager = manager;
         this.launchDate = launchDate;
         this.startDate = startDate;
+        this.status = status;
     }
 
     public Chitty() {

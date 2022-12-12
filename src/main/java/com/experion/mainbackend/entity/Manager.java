@@ -1,5 +1,6 @@
 package com.experion.mainbackend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +15,7 @@ import java.util.Set;
 @Table(name = "manager")
 @Getter
 @Setter
-
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Manager {
 
     @Id

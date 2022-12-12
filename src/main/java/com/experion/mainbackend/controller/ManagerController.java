@@ -34,12 +34,6 @@ public class ManagerController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please upload excel file ");
     }
 
-//    @RequestMapping(value = "*/managerslist" ,method = RequestMethod.GET )
-//    public ResponseEntity<Object> getAllManagers(){
-//        List<Manager> managerList = managerService.getAllManagers();
-//        return new ResponseEntity<>(managerList,HttpStatus.OK);
-//    }
-
     @GetMapping("*/managerslist")
     public List<Manager> getAllManagers() {
         return this.managerService.getAllManagers();

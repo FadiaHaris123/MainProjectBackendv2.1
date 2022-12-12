@@ -15,8 +15,10 @@ public class ChittyPost {
     private Long duration;
     private Long manager;
     private Integer numberOfChittal;
+    private Integer currentNumberOfChittal;
     private Long category;
     private Long totalAmount;
     private Date launchDate;
     private Date startDate;
+    private String status;
 }
