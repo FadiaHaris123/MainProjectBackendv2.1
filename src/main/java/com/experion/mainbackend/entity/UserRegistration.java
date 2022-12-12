@@ -28,4 +28,7 @@ public class UserRegistration {
 
     @Column(name="password")
     private String passWord;
+
+    @Column(name = "roleid")
+    private Integer roleId;
 }

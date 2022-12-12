@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import net.minidev.json.annotate.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -38,22 +37,27 @@ public class Manager {
     @Column(name = "password")
     private String passWord;
 
+    @Column(name = "roleid")
+    private Integer roleId;
+
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "manager",fetch = FetchType.LAZY)
     private Set<Chitty> chits= new HashSet<>();
 
-    public Manager(Long emp_id, String firstName, String emp_lastname, String email, Long mobileNumber, String passWord, Set<Chitty> chits) {
+    public Manager(Long emp_id, String firstName, String emp_lastname, String email, Long mobileNumber, String passWord, Integer roleId, Set<Chitty> chits) {
         this.emp_id = emp_id;
         this.firstName = firstName;
         this.emp_lastname = emp_lastname;
         this.email = email;
         this.mobileNumber = mobileNumber;
         this.passWord = passWord;
+        this.roleId = roleId;
         this.chits = chits;
     }
 
     public Manager() {
     }
+
 
     public Long getEmp_id() {
         return emp_id;
@@ -101,6 +105,14 @@ public class Manager {
 
     public void setPassWord(String passWord) {
         this.passWord = passWord;
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
     public Set<Chitty> getChits() {
